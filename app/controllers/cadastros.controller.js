@@ -14,7 +14,6 @@ exports.create = (req, res) => {
 
     cadastro['limite_credito'] = moneyToFloat(cadastro['limite_credito']);
     cadastro['validade'] = formatDate(cadastro['validade']);
-    cadastro['data_hora_cadastro'] = new Date().toISOString();
     cadastro['id_usuario'] = 1;
 
     Cadastros.create(cadastro).then(data => {
@@ -181,11 +180,14 @@ function payloadToJSON(payload) {
 }
 
 function formatDate(date) {
-    const dateParts = date.split("/")
-    const adjustedDate = `${dateParts[1]}/${dateParts[0]}/${dateParts[2]}`
-    return adjustedDate
+    let formatDate = new Date(date)
+    return formatDate.toISOString().split('T')[0]
 }
 
 function moneyToFloat(money) {
-    return parseFloat(money.replace(/[^\d,]/g, '').replace(',', '.'))
+    if (typeof money !== 'string') {
+        return money
+    }
+    money = money.replace(/[^\d,]/g, '').replace(',', '.');
+    return money
 }
