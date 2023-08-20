@@ -39,11 +39,15 @@ npm run start
 
 ## Lista de Endpoints
 
-[GET] - http://localhost:3001/api/cadastros => Lista todos os cadastros do sistema
-[POST] - http://localhost:3001/api/cadastros => Novo cadastro
-[GET] - http://localhost:3001/api/cadastros/{id} => Busca um cadastro específico pelo {id}
-[PUT] - http://localhost:3001/api/cadastros/{id} => Atualiza um cadastro específico pelo {id}
-[DELETE] - http://localhost:3001/api/cadastros/{id} => Remove um cadastro específico pelo {id}
+`[POST]` - `http://localhost:3001/cadastros/` => novo cadastro
+
+`[GET]` - `http://localhost:3001/cadastros/` => lista todos os cadastros do sistema
+
+`[GET]` - `http://localhost:3001/cadastros/{id}` => bsuca cadastro específico pelo {id}
+
+`[PUT]` - `http://localhost:3001/cadastros/{id}` => atualizar cadastro específico pelo {id}
+
+`[DELETE]` - `http://localhost:3001/cadastros/{id}` => remover cadastro específico pelo {id}
 
 ## Testes Unitários
 
@@ -52,6 +56,10 @@ Você pode executar os testes unitários usando o seguinte comando:
 ```sh
 npm run test
 ```
+
+Print de exemplo após execução dos testes unitários:
+
+![JEST](https://github.com/davidaugusto89/qe-api/blob/main/_test_/jest.png)
 
 ## Testes no Insomnia e Postman
 
