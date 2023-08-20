@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "ac1c2cc5-8e1d-49c1-9901-03e086944234",
+		"name": "Cadastros",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10262051"
+	},
+	"item": [
+		{
+			"name": "01 - /cadastros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/cadastros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"cadastros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02 - /cadastros",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"id_usuario\": 123456,\r\n   \"data_hora_cadastro\": \"2023-08-17T10:00:00\",\r\n   \"codigo\": \"ABC123\",\r\n   \"nome\": \"João da Silva\",\r\n   \"cpf_cnpj\": \"123.456.789-00\",\r\n   \"cep\": \"12345-678\",\r\n   \"logradouro\": \"Rua\",\r\n   \"endereco\": \"Edifício Primavera\",\r\n   \"numero\": \"101\",\r\n   \"bairro\": \"Centro\",\r\n   \"cidade\": \"São Paulo\",\r\n   \"uf\": \"SP\",\r\n   \"complemento\": \"Apartamento 202\",\r\n   \"fone\": \"(11) 1234-5678\",\r\n   \"limite_credito\": 1500.00,\r\n   \"validade\": \"2024-12-31\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/cadastros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"cadastros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03 - /cadastros/{id}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/api/cadastros/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"cadastros",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "04 - /cadastros/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"id_usuario\": 123456,\r\n   \"data_hora_cadastro\": \"2023-08-17T10:00:00\",\r\n   \"codigo\": \"ABC123\",\r\n   \"nome\": \"João da Silva - ABC\",\r\n   \"cpf_cnpj\": \"123.456.789-00\",\r\n   \"cep\": \"12345-678\",\r\n   \"logradouro\": \"Rua\",\r\n   \"endereco\": \"Edifício Primavera\",\r\n   \"numero\": \"101\",\r\n   \"bairro\": \"Centro\",\r\n   \"cidade\": \"São Paulo\",\r\n   \"uf\": \"SP\",\r\n   \"complemento\": \"Apartamento 202\",\r\n   \"fone\": \"(11) 1234-5678\",\r\n   \"limite_credito\": 1500.00,\r\n   \"validade\": \"2024-12-31\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/cadastros/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"cadastros",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "05 - /cadastros/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/cadastros/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"cadastros",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "06 - /cadastros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/cadastros?cep=12345-678",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"cadastros"
+					],
+					"query": [
+						{
+							"key": "cep",
+							"value": "12345-678"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

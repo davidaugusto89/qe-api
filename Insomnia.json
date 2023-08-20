@@ -1,0 +1,220 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2023-08-20T17:37:07.303Z",
+    "__export_source": "insomnia.desktop.app:v2023.5.3",
+    "resources": [
+        {
+            "_id": "req_418c59c46ef4438a8dcb1a6018e002db",
+            "parentId": "wrk_e651630772a049fca92c582ddbef91b7",
+            "modified": 1692552874660,
+            "created": 1692316040680,
+            "url": "http://localhost:3001/api/cadastros",
+            "name": "01 - /cadastros",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": 50,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "wrk_e651630772a049fca92c582ddbef91b7",
+            "parentId": null,
+            "modified": 1692316038067,
+            "created": 1692316038067,
+            "name": "Cadastros",
+            "description": "",
+            "scope": "collection",
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_efc652d2dea4483f8d2b3f2c279ace05",
+            "parentId": "wrk_e651630772a049fca92c582ddbef91b7",
+            "modified": 1692552924425,
+            "created": 1692318199882,
+            "url": "http://localhost:3001/api/cadastros",
+            "name": "02 - /cadastros",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n   \"id_usuario\": 123456,\n   \"data_hora_cadastro\": \"2023-08-17T10:00:00\",\n   \"codigo\": \"ABC123\",\n   \"nome\": \"João da Silva\",\n   \"cpf_cnpj\": \"123.456.789-00\",\n   \"cep\": \"12345-678\",\n   \"logradouro\": \"Rua das Flores\",\n   \"endereco\": \"Edifício Primavera\",\n   \"numero\": \"101\",\n   \"bairro\": \"Centro\",\n   \"cidade\": \"São Paulo\",\n   \"uf\": \"SP\",\n   \"complemento\": \"Apartamento 202\",\n   \"fone\": \"(11) 1234-5678\",\n   \"limite_credito\": 1500.00,\n   \"validade\": \"2024-12-31\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": 200,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_70f5a07ff25a4e698ecad8d70b39396d",
+            "parentId": "wrk_e651630772a049fca92c582ddbef91b7",
+            "modified": 1692553003937,
+            "created": 1692319025084,
+            "url": "http://localhost:3001/api/cadastros/1",
+            "name": "03 - /cadastros/{id}",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": 300,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_77746c800fd74973952c6cdb686f7722",
+            "parentId": "wrk_e651630772a049fca92c582ddbef91b7",
+            "modified": 1692553006867,
+            "created": 1692319751733,
+            "url": "http://localhost:3001/api/cadastros/1",
+            "name": "04 - /cadastros/{id}",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n   \"id_usuario\": 123456,\n   \"data_hora_cadastro\": \"2023-08-17T10:00:00\",\n   \"codigo\": \"ABC123\",\n   \"nome\": \"João da Silva - ABC\",\n   \"cpf_cnpj\": \"123.456.789-00\",\n   \"cep\": \"12345-678\",\n   \"logradouro\": \"Rua das Flores\",\n   \"endereco\": \"Edifício Primavera\",\n   \"numero\": \"101\",\n   \"bairro\": \"Centro\",\n   \"cidade\": \"São Paulo\",\n   \"uf\": \"SP\",\n   \"complemento\": \"Apartamento 202\",\n   \"fone\": \"(11) 1234-5678\",\n   \"limite_credito\": 1500.00,\n   \"validade\": \"2024-12-31\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": 400,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_d0f61ce82e5743038db811ddf9a98594",
+            "parentId": "wrk_e651630772a049fca92c582ddbef91b7",
+            "modified": 1692552895161,
+            "created": 1692319907833,
+            "url": "http://localhost:3001/api/cadastros/1",
+            "name": "05 - /cadastros/{id}",
+            "description": "",
+            "method": "DELETE",
+            "body": {
+                "mimeType": "application/json",
+                "text": ""
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": 500,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_2c477474d49a47019093766befcb6d44",
+            "parentId": "wrk_e651630772a049fca92c582ddbef91b7",
+            "modified": 1692552956557,
+            "created": 1692474502293,
+            "url": "http://localhost:3001/api/cadastros?cep=12345-678",
+            "name": "06 - /cadastros",
+            "description": "",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": ""
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": 225,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "env_4db9e27b810d5545c479bda26df21b2b9611daba",
+            "parentId": "wrk_e651630772a049fca92c582ddbef91b7",
+            "modified": 1692316038071,
+            "created": 1692316038071,
+            "name": "Base Environment",
+            "data": {},
+            "dataPropertyOrder": null,
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1692316038071,
+            "_type": "environment"
+        },
+        {
+            "_id": "jar_4db9e27b810d5545c479bda26df21b2b9611daba",
+            "parentId": "wrk_e651630772a049fca92c582ddbef91b7",
+            "modified": 1692316038072,
+            "created": 1692316038072,
+            "name": "Default Jar",
+            "cookies": [],
+            "_type": "cookie_jar"
+        },
+        {
+            "_id": "spc_45e7e2d9f13e49a4b6458099d37bb571",
+            "parentId": "wrk_e651630772a049fca92c582ddbef91b7",
+            "modified": 1692316038068,
+            "created": 1692316038068,
+            "fileName": "Cadastros",
+            "contents": "",
+            "contentType": "yaml",
+            "_type": "api_spec"
+        }
+    ]
+}

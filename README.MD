@@ -19,3 +19,40 @@ git clone -b main https://github.com/davidaugusto89/qe-api.git
 cd qe-api
 npm install
 ```
+
+Alterar arquivo `.env` com as credenciais de conexão para o banco de dados MySQL que será utilizado.
+
+```sh
+DB_HOST={DB_HOST}
+DB_DATABASE={DB_NOME}
+DB_USERNAME={DB_USUARIO}
+DB_PASSWORD={DB_SENHA}
+```
+
+## Iniciar o projeto
+
+Para inciar o servidor após instalar, acessar pelo terminal o diretório que foi instalado o projeto e execute o comando:
+
+```sh
+npm run start
+```
+
+## Lista de Endpoints
+
+[GET] - http://localhost:3001/api/cadastros => Lista todos os cadastros do sistema
+[POST] - http://localhost:3001/api/cadastros => Novo cadastro
+[GET] - http://localhost:3001/api/cadastros/{id} => Busca um cadastro específico pelo {id}
+[PUT] - http://localhost:3001/api/cadastros/{id} => Atualiza um cadastro específico pelo {id}
+[DELETE] - http://localhost:3001/api/cadastros/{id} => Remove um cadastro específico pelo {id}
+
+## Testes Unitários
+
+Você pode executar os testes unitários usando o seguinte comando:
+
+```sh
+npm run test
+```
+
+## Testes no Insomnia e Postman
+
+Para testar os endpoints, você pode importar o arquivo Insomnia.json no Insomnia ou o arquivo Postman.json no Postman, ambos contêm as requisições prontas para teste.
