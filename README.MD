@@ -63,4 +63,4 @@ Print de exemplo após execução dos testes unitários:
 
 ## Testes no Insomnia e Postman
 
-Para testar os endpoints, você pode importar o arquivo Insomnia.json no Insomnia ou o arquivo Postman.json no Postman, ambos contêm as requisições prontas para teste.
+Para testar os endpoints, existe dentro do repositório o arquivo Insomnia.json para ser importado no Insomnia ou o arquivo Postman.json para ser importado no Postman, ambos contêm as requisições prontas para teste.
