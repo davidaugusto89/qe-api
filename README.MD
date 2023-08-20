@@ -15,8 +15,7 @@ Backend em formato RESTful com operações `CRUD` para um cadastro, utilizando `
 Para instalar a aplicação, execute os seguintes comandos no terminal:
 
 ```sh
-git clone -b main https://github.com/davidaugusto89/dg-backend.git
-cd dg-backend
+git clone -b main https://github.com/davidaugusto89/qe-api.git
+cd qe-api
 npm install
-cp .env.example .env
 ```
