@@ -51,7 +51,8 @@ npm run start
 
 `[DELETE]` - `http://localhost:3001/cadastros/{id}` => remover cadastro específico pelo {id}
 
-Os cadastros podem ser filtrados utilizando os parâmetros via GET: `codigo`, `nome`, `cep` e `cidade`. Exemplo:
+Os cadastros podem ser filtrados utilizando os parâmetros via GET: `codigo`, `nome`, `cep` e `cidade`.
+Exemplos:
 
 `http://localhost:3001/cadastros/?codigo=1234`
 
