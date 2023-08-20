@@ -9,17 +9,20 @@ exports.create = (req, res) => {
         res.status(400).send({ message: validate });
         return;
     }
-
     let cadastro = payloadToJSON(req.body)
+
+
+    cadastro['limite_credito'] = moneyToFloat(cadastro['limite_credito']);
+    cadastro['validade'] = formatDate(cadastro['validade']);
+    cadastro['data_hora_cadastro'] = new Date().toISOString();
+    cadastro['id_usuario'] = 1;
 
     Cadastros.create(cadastro).then(data => {
         res.status(201).send({ id: data.id, nome: data.nome, message: "Cadastros finalizado com sucesso!" })
     }).catch(err => {
         const errObj = {};
-        err.errors.map(er => {
-            errObj[er.path] = er.message;
-        })
-        res.status(202).send({
+        console.log(err)
+        res.status(500).send({
             message: errObj || "Não foi possivel finalizar o cadastro, tente novamente mais tarde!"
         });
     });
@@ -27,6 +30,30 @@ exports.create = (req, res) => {
 
 exports.findAll = (req, res) => {
     let whereConditional = [];
+    if (typeof req.query.codigo !== 'undefined') {
+        whereConditional.push({ codigo: req.query.codigo })
+    }
+
+    if (typeof req.query.nome !== 'undefined') {
+        whereConditional.push({
+            nome: {
+                [Op.like]: `%${req.query.nome}%`
+            }
+        })
+    }
+
+    if (typeof req.query.cep !== 'undefined') {
+        whereConditional.push({ cep: req.query.cep })
+    }
+
+    if (typeof req.query.cidade !== 'undefined') {
+        whereConditional.push({
+            cidade: {
+                [Op.like]: `%${req.query.cidade}%`
+            }
+        })
+    }
+
     let where = whereConditional || null;
 
     Cadastros.findAll({
@@ -38,7 +65,7 @@ exports.findAll = (req, res) => {
         res.send(data);
     }).catch(err => {
         res.status(500).send({
-            message: err.message || "Some error occurred while retrieving cadastros."
+            message: err.message || "Ocorreu algum erro ao recuperar os cadastros."
         });
     });
 };
@@ -68,6 +95,8 @@ exports.update = (req, res) => {
     }
 
     let cadastro = payloadToJSON(req.body)
+    cadastro['limite_credito'] = moneyToFloat(cadastro['limite_credito']);
+    cadastro['validade'] = formatDate(cadastro['validade']);
 
     Cadastros.update(cadastro, {
         where: {
@@ -108,8 +137,6 @@ exports.delete = (req, res) => {
 
 function validatePayload(payload) {
     const camposObrigatorios = [
-        "id_usuario",
-        "data_hora_cadastro",
         "codigo",
         "nome",
         "cpf_cnpj",
@@ -120,7 +147,6 @@ function validatePayload(payload) {
         "bairro",
         "cidade",
         "uf",
-        "complemento",
         "fone",
         "limite_credito",
         "validade"
@@ -137,8 +163,6 @@ function validatePayload(payload) {
 
 function payloadToJSON(payload) {
     return cadastro = {
-        id_usuario: payload.id_usuario,
-        data_hora_cadastro: payload.data_hora_cadastro,
         codigo: payload.codigo,
         nome: payload.nome,
         cpf_cnpj: payload.cpf_cnpj,
@@ -154,4 +178,14 @@ function payloadToJSON(payload) {
         limite_credito: payload.limite_credito,
         validade: payload.validade
     };
+}
+
+function formatDate(date) {
+    const dateParts = date.split("/")
+    const adjustedDate = `${dateParts[1]}/${dateParts[0]}/${dateParts[2]}`
+    return adjustedDate
+}
+
+function moneyToFloat(money) {
+    return parseFloat(money.replace(/[^\d,]/g, '').replace(',', '.'))
 }

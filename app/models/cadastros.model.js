@@ -13,7 +13,7 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.STRING(20)
     },
     cep: {
-      type: Sequelize.INTEGER
+      type: Sequelize.STRING(9)
     },
     logradouro: {
       type: Sequelize.STRING(100)
