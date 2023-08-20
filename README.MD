@@ -45,6 +45,8 @@ npm run start
 
 `[GET]` - `http://localhost:3001/cadastros/` => lista todos os cadastros do sistema
 
+Por ser filtrado os cadastros utilizando os parametros via GET: `codigo`, `nome`, `cep` e `cidade`.
+
 `[GET]` - `http://localhost:3001/cadastros/{id}` => bsuca cadastro específico pelo {id}
 
 `[PUT]` - `http://localhost:3001/cadastros/{id}` => atualizar cadastro específico pelo {id}
